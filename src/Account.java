@@ -14,7 +14,7 @@ abstract public class Account {
         System.out.println("New Balance: " + this.balance);
     }
     public boolean withdraw (double amount){
-        if(amount > this.balance){
+        if (amount > this.balance) {
             System.out.println("Insufficient Balance!");
             return false;
         } else {
@@ -23,6 +23,12 @@ abstract public class Account {
             System.out.println("Balance: " + this.balance);
             return true;
         }
+    }
+    protected void updateBalanceDeposit(double amount){
+        this.balance += amount;
+    }
+    protected void updateBalanceWithdraw(double amount){
+        this.balance -= amount;
     }
     public double getBalance (){
         return this.balance;
