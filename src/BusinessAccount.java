@@ -17,7 +17,7 @@ public class BusinessAccount extends Account {
     public void  applyTransactionFee (double transactionAmount){
         double fee  = transactionAmount*this.transactionFeePercentage;
         super.withdraw(fee);
-        System.out.println("Transaction Fee is now $" + fee);
+        System.out.println("Transaction Fee is  $ " + fee);
         System.out.println("New Balance: " + this.getBalance());
     }
 
