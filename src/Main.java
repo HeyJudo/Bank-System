@@ -21,5 +21,8 @@ public class Main {
         b1.withdraw(6000);
         b1.applyTransactionFee(3000);
         b1.displayAccountDetails();
+        System.out.println("\n========== Testing Transaction ==========\n");
+        Transaction t1 = new Transaction("DEPOSIT", 300.00, "This is a test");
+        t1.displayTransaction();
     }
 }
