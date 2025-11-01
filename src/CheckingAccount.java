@@ -31,7 +31,10 @@ public class CheckingAccount extends Account {
             super.updateBalanceDeposit(-amount);
             System.out.println("Balance: " + this.getBalance());
             return true;
-        } else return false;
+        } else {
+            System.out.println("Exceeded Overdraft Limit!");
+            return false;
+        }
 
 
     }
