@@ -6,7 +6,7 @@ public class Transaction {
     private String transactionType;
     private double amount;
     private String description;
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     public Transaction(String transactionType, double amount, String description) {
         this.transactionType = transactionType;

@@ -1,7 +1,9 @@
+import java.util.ArrayList; 
 abstract public class Account {
     private String accountNumber;
     private String accountHolderName;
     private double balance;
+    private ArrayList transactionHistory;
 
     public Account(String accountNumber, String accountHolderName, double Balance){
         this.accountNumber = accountNumber;
