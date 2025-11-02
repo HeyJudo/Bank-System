@@ -55,5 +55,21 @@ abstract public class Account {
         Transaction t1 = new Transaction(transactionType, amount, description);
         this.transactionsHistory.add(t1);
     }
+    public void viewTransactionHistory(){
+        System.out.println("======== TRANSACTION HISTORY ========");
+        System.out.println("Account Number: " + this.accountNumber);
+        System.out.println("Account Name: " + this.accountHolderName);
+        if(transactionsHistory.isEmpty()){
+            System.out.println("No transactions have been added to this account");
+        } else {
+            for(Transaction t: transactionsHistory){
+                t.displayTransaction();
+            }
+        }
+        System.out.println("==========================");
+    }
+    public ArrayList <Transaction> getTransactionsHistory(){
+        return this.transactionsHistory;
+    }
 }
 
