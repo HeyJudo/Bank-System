@@ -25,7 +25,7 @@ abstract public class Account {
             this.balance-=amount;
             System.out.println("Withdrawn: " + amount);
             System.out.println("Balance: " + this.balance);
-            addTransaction("DEPOSIT", amount, "Withdraw to Account");
+            addTransaction("WITHDRAW", amount, "Withdraw to Account");
             return true;
         }
     }
