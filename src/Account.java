@@ -3,17 +3,19 @@ abstract public class Account {
     private String accountNumber;
     private String accountHolderName;
     private double balance;
-    private ArrayList transactionHistory;
+    private ArrayList <Transaction> transactionsHistory;
 
     public Account(String accountNumber, String accountHolderName, double Balance){
         this.accountNumber = accountNumber;
         this.accountHolderName = accountHolderName;
         this.balance = Balance;
+        this.transactionsHistory = new ArrayList<>();
     }
     public void deposit (double amount){
         this.balance+= amount;
         System.out.println("Amount Deposited: "+ amount);
         System.out.println("New Balance: " + this.balance);
+        addTransaction("DEPOSIT", amount, "Deposit to Account");
     }
     public boolean withdraw (double amount){
         if (amount > this.balance) {
@@ -23,6 +25,7 @@ abstract public class Account {
             this.balance-=amount;
             System.out.println("Withdrawn: " + amount);
             System.out.println("Balance: " + this.balance);
+            addTransaction("DEPOSIT", amount, "Withdraw to Account");
             return true;
         }
     }
@@ -47,6 +50,10 @@ abstract public class Account {
         System.out.println("Account Number: "+ this.accountNumber);
         System.out.println("Account Balance: "+ this.balance);
         System.out.println("===========================");
+    }
+    private  void addTransaction (String transactionType, double amount, String description){
+        Transaction t1 = new Transaction(transactionType, amount, description);
+        this.transactionsHistory.add(t1);
     }
 }
 
