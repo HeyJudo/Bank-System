@@ -32,4 +32,44 @@ public class Customer {
             }
         }
     }
+    public Account getAccount (String accountNumber){
+        int flag = 0;
+        if(accounts.isEmpty()){
+            System.out.println("There is no account registered");
+            flag = -1;
+        } else{
+            for(Account a1: accounts){
+                if(a1.getAccountNumber().equals(accountNumber)){
+                    return a1;
+                }
+            }
+        } if (flag == 0){
+            System.out.println("There is no account with a number " + accountNumber);
+            return null;
+        }
+        return null;
+    }
+    public void displayAllAccounts(){
+        int flag = 0;
+        System.out.println("LIST OF ALL OF YOUR ACCOUNTS");
+        for(Account a1: accounts){
+            a1.displayAccountDetails();
+        }
+    }
+    public String getCustomerId(){
+        return this.customerId;
+    }
+    public String getCustomerName(){
+        return this.customerName;
+    }
+    public ArrayList<Account> getAccounts(){
+        return this.accounts;
+    }
+    public void displayCustomerInfo(){
+        System.out.println("======= CUSTOMER INFO =======");
+        System.out.println("Customer ID: "+ this.customerId);
+        System.out.println("Customer Name: "+ this.customerName);
+        System.out.println("Number of Accounts: "+ accounts.size());
+
+    }
 }
