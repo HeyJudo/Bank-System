@@ -10,7 +10,26 @@ public class Customer {
         this.accounts = new ArrayList<>();
     }
 
-    public void addAccount (){
-
+    public void addAccount (Account account){
+        accounts.add(account);
+        System.out.println("Successfully Addded an Account");
+    }
+    public void removeAccount(String accountNumber){
+        int flag = 0;
+        if(accounts.isEmpty()){
+            System.out.println("There is no account registered");
+            flag = -1;
+        } else {
+            for(Account a1: accounts){
+                if(a1.getAccountNumber().equals(accountNumber)){
+                    accounts.remove(a1);
+                    System.out.println("Successfully Removed an Account " +  accountNumber);
+                    flag = 1;
+                    break;
+                }
+            } if (flag == 0){
+                System.out.println("There is no account with a number " + accountNumber);
+            }
+        }
     }
 }
