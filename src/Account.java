@@ -71,5 +71,8 @@ abstract public class Account {
     public ArrayList <Transaction> getTransactionsHistory(){
         return this.transactionsHistory;
     }
+    public boolean transfer (Account targetAccount, double amount){
+
+    }
 }
 
