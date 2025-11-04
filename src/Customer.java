@@ -70,6 +70,17 @@ public class Customer {
         System.out.println("Customer ID: "+ this.customerId);
         System.out.println("Customer Name: "+ this.customerName);
         System.out.println("Number of Accounts: "+ accounts.size());
+        System.out.println("Accounts Owned: ");
+        int count = 0;
+        if(accounts.isEmpty()){
+            System.out.println("There is no account registered");
+        } else {
+            for(Account a: accounts) {
+                count++;
+                System.out.printf("%d. Account Number: %s - Type: %s", count, a.getAccountNumber(), a.getClass().getSimpleName());
+            }
+        }
+
 
     }
 }
