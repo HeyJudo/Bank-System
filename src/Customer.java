@@ -15,42 +15,34 @@ public class Customer {
         System.out.println("Successfully Addded an Account");
     }
     public void removeAccount(String accountNumber){
-        int flag = 0;
         if(accounts.isEmpty()){
             System.out.println("There is no account registered");
-            flag = -1;
+            return;
         } else {
             for(Account a1: accounts){
                 if(a1.getAccountNumber().equals(accountNumber)){
                     accounts.remove(a1);
                     System.out.println("Successfully Removed an Account " +  accountNumber);
-                    flag = 1;
-                    break;
+                    return;
                 }
-            } if (flag == 0){
-                System.out.println("There is no account with a number " + accountNumber);
             }
+                System.out.println("There is no account with a number " + accountNumber);
         }
     }
     public Account getAccount (String accountNumber){
-        int flag = 0;
         if(accounts.isEmpty()){
             System.out.println("There is no account registered");
-            flag = -1;
-        } else{
+            return null;
+        }
             for(Account a1: accounts){
                 if(a1.getAccountNumber().equals(accountNumber)){
                     return a1;
                 }
             }
-        } if (flag == 0){
             System.out.println("There is no account with a number " + accountNumber);
             return null;
-        }
-        return null;
     }
     public void displayAllAccounts(){
-        int flag = 0;
         System.out.println("LIST OF ALL OF YOUR ACCOUNTS");
         for(Account a1: accounts){
             a1.displayAccountDetails();
@@ -77,7 +69,7 @@ public class Customer {
         } else {
             for(Account a: accounts) {
                 count++;
-                System.out.printf("%d. Account Number: %s - Type: %s", count, a.getAccountNumber(), a.getClass().getSimpleName());
+                System.out.printf("%d. Account Number: %s - Type: %s\n", count, a.getAccountNumber(), a.getClass().getSimpleName());
             }
         }
 
