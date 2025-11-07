@@ -89,5 +89,11 @@ public class Bank {
         System.out.println("Total Number of Accounts: " + totalAccounts);
         System.out.println("==========================");
     }
+    public String getBankNameB (){
+        return this.bankName;
+    }
+    public ArrayList <Customer> getCustomers(){
+        return this.customers;
+    }
 
 }
