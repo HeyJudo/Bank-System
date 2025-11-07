@@ -51,6 +51,17 @@ public class Bank {
         System.out.println("Total Number of Customers Registered: " + customers.size());
     }
     public Account findAccountByNumber(String accountNumber){
-
+        if(customers.isEmpty()){
+            System.out.println("There are no customer registered!");
+            return null;
+        }
+        for(Customer c: customers){
+            Account target = c.getAccount(accountNumber);
+            if(target != null){
+                return target;
+            }
+        }
+        System.out.println("There is no account with account number " + accountNumber);
+        return null;
     }
 }
