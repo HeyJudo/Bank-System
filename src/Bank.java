@@ -76,5 +76,18 @@ public class Bank {
             return false;
         }
     }
+    public void displayBankInfo(){
+        int totalAccounts = 0;
+        ArrayList <Account> accounts = new ArrayList<>();
+        System.out.println("======= BANK INFO =======");
+        System.out.println("Bank Name: " + this.bankName);
+        System.out.println("Total Number of Customers: " + customers.size());
+        for (Customer c: customers){
+            accounts = c.getAccounts();
+            totalAccounts += accounts.size();
+        }
+        System.out.println("Total Number of Accounts: " + totalAccounts);
+        System.out.println("==========================");
+    }
 
 }
