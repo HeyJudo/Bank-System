@@ -72,7 +72,16 @@ abstract public class Account {
         return this.transactionsHistory;
     }
     public boolean transfer (Account targetAccount, double amount){
-
+        if(this.balance >= amount ){
+            this.withdraw(amount);
+            targetAccount.deposit(amount);
+            addTransaction("TRANSFER", amount, "Transfer to "+ targetAccount.getAccountNumber());
+            System.out.println("Successfully transferred $" + amount +" from " + this.accountNumber + " to " + targetAccount.getAccountNumber());
+            return true;
+        }  else {
+            System.out.println("Insufficient Balance!");
+            return false;
+        }
     }
 }
 
