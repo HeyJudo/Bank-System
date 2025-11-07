@@ -72,5 +72,6 @@ public class Customer {
                 System.out.printf("%d. Account Number: %s - Type: %s\n", count, a.getAccountNumber(), a.getClass().getSimpleName());
             }
         }
+        System.out.println("===============================");
     }
 }

@@ -40,5 +40,17 @@ public class Bank {
         System.out.println("Customer not found!");
         return null;
     }
+    public void displayAlCustomers(){
+        if(customers.isEmpty()){
+            System.out.println("There are no customer registered!");
+            return;
+        }
+        for (Customer c: customers){
+            c.displayCustomerInfo();
+        }
+        System.out.println("Total Number of Customers Registered: " + customers.size());
+    }
+    public Account findAccountByNumber(String accountNumber){
 
+    }
 }
