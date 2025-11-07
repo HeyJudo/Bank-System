@@ -27,7 +27,18 @@ public class Bank {
         return;
     }
     public Customer getCustomer(String costumerId){
-
+        if(customers.isEmpty()){
+            System.out.println("There are no customer registered!");
+            return null;
+        }
+        for (Customer c: customers){
+            if(c.getCustomerId().equals(costumerId)){
+                System.out.println("Sucessfully found customer " + costumerId);
+                return c;
+            }
+        }
+        System.out.println("Customer not found!");
+        return null;
     }
 
 }
