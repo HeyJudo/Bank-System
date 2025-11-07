@@ -12,7 +12,7 @@ public class Customer {
 
     public void addAccount (Account account){
         accounts.add(account);
-        System.out.println("Successfully Addded an Account");
+        System.out.println("Successfully Added an Account");
     }
     public void removeAccount(String accountNumber){
         if(accounts.isEmpty()){
@@ -72,7 +72,5 @@ public class Customer {
                 System.out.printf("%d. Account Number: %s - Type: %s\n", count, a.getAccountNumber(), a.getClass().getSimpleName());
             }
         }
-
-
     }
 }
