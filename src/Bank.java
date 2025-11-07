@@ -64,4 +64,17 @@ public class Bank {
         System.out.println("There is no account with account number " + accountNumber);
         return null;
     }
+    public boolean transferBetweenCustomers(String fromAccountNum, String toAccountNum, double amount){
+        Account fromAccount = findAccountByNumber(fromAccountNum);
+        Account targetAccount = findAccountByNumber(toAccountNum);
+        if (fromAccount != null && targetAccount != null) {
+            fromAccount.transfer(targetAccount, amount);
+            System.out.println("Transfer Successful!");
+            return true;
+        } else {
+            System.out.println("Transfer Failed!");
+            return false;
+        }
+    }
+
 }
