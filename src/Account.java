@@ -73,8 +73,8 @@ abstract public class Account {
     }
     public boolean transfer (Account targetAccount, double amount){
         if(this.balance >= amount ){
-            this.withdraw(amount);
-            targetAccount.deposit(amount);
+            this.updateBalanceWithdraw(amount);
+            targetAccount.updateBalanceDeposit(amount);
             addTransaction("TRANSFER", amount, "Transfer to "+ targetAccount.getAccountNumber());
             System.out.println("Successfully transferred $" + amount +" from " + this.accountNumber + " to " + targetAccount.getAccountNumber());
             return true;
