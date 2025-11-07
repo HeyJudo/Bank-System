@@ -7,5 +7,10 @@ public class Bank {
         this.bankName = bankName;
         this.customers = new ArrayList<>();
     }
+    public void addCustomer(Customer customer){
+        customers.add(customer);
+        System.out.println("Successfully added "+ customer.getCustomerName());
+
+    }
 
 }
